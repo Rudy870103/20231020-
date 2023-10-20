@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
         body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             background-image: url(./css/background.jpg);
-            background-size: auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         .container{
             width: 50%;
@@ -15,7 +24,7 @@
             margin-top: 25vh;
             padding-top: 1vh;
             background-color: rgba(211, 211, 211, 0.2);
-            backdrop-filter: blur(80px);
+            backdrop-filter: blur(50px);
             text-align: center;
             border: 1px solid rgb(255, 255, 255,0.3);
             border-radius: 10px;
@@ -38,6 +47,11 @@
             border-radius: 5px;
             color: white;
 
+        }
+        @media (max-width:600px){
+            tr input{
+                width: 100%;
+            }
         }
         
         input::placeholder{
@@ -67,19 +81,20 @@
         <form action="">
             <table>
             <tr>
-                <td><input type="text" name="name" id="name" placeholder="Full Name"></td>
-                <td><input type="text" name="username" id="username" placeholder="Username"></td>
+                <td><input type="text" name="name" id="name" placeholder="Full Name" required></td>
+                <td><input type="text" name="username" id="username" placeholder="Username" required></td>
             </tr>
             <tr>
-                <td><input type="email" name="email" id="email" placeholder="Email"></td>
-                <td><input type="tel" name="phone" id="phone" placeholder="Phone Number"></td>
+                <td><input type="email" name="email" id="email" placeholder="Email" required></td>
+                <td><input type="tel" name="phone" id="phone" placeholder="Phone Number" required></td>
             </tr>
             <tr>
-                <td><input type="password" name="password" id="password" placeholder="Password"></td>
-                <td><input type="password" name="password" id="password" placeholder="Confirm Password"></td>
+                <td><input type="password" name="password" id="password" placeholder="Password" required></td>
+                <td><input type="password" name="password" id="password" placeholder="Confirm Password" required></td>
             </tr>
         </table>
-        <input type="checkbox" name="checkbox" id="checkbox">I hereby declare that the above information provided is true and correct
+        <input type="checkbox" name="checkbox" id="checkbox" required>
+        <label for="checkbox">I hereby declare that the above information provided is true and correct</label>
         <br>
         <input type="submit" name="submit" id="submit" value="Register">
         </form>
